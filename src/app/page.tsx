@@ -261,7 +261,7 @@ export default function Home() {
           style={{ height: "120px", display: "block" }}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M0 120L1440 120V0L0 120Z" fill="white" />
+          <path d="M0 0L1440 0L0 120Z" fill="white" />
         </svg>
       </div>
 

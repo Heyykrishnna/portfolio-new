@@ -57,7 +57,7 @@ export default function ContactCTA() {
                 <input 
                   type="text" 
                   placeholder="Piyush"
-                  className="bg-transparent border-b border-zinc-200 py-3 text-[16px] font-medium focus:border-black outline-none transition-colors"
+                  className="bg-transparent border-b border-zinc-200 py-3 text-[16px] text-black font-medium focus:border-black outline-none transition-colors placeholder:text-zinc-400"
                 />
               </div>
               <div className="flex flex-col gap-4">
@@ -65,7 +65,7 @@ export default function ContactCTA() {
                 <input 
                   type="text" 
                   placeholder="Khandelwal"
-                  className="bg-transparent border-b border-zinc-200 py-3 text-[16px] font-medium focus:border-black outline-none transition-colors"
+                  className="bg-transparent border-b border-zinc-200 py-3 text-[16px] text-black font-medium focus:border-black outline-none transition-colors placeholder:text-zinc-400"
                 />
               </div>
             </div>
@@ -74,13 +74,13 @@ export default function ContactCTA() {
               <div className="flex flex-col gap-4">
                 <label className="text-[12px] font-black uppercase tracking-[0.2em] text-black">Category</label>
                 <div className="relative">
-                  <select className="w-full bg-transparent border-b border-zinc-200 py-3 text-[16px] font-medium focus:border-black outline-none transition-colors appearance-none cursor-pointer">
-                    <option>Development</option>
-                    <option>Design</option>
-                    <option>AI / ML</option>
-                    <option>Full Engagement</option>
+                  <select className="w-full bg-transparent border-b border-zinc-200 py-3 text-[16px] text-black font-medium focus:border-black outline-none appearance-none cursor-pointer">
+                    <option className="text-black">Development</option>
+                    <option className="text-black">Design</option>
+                    <option className="text-black">AI / ML</option>
+                    <option className="text-black">Full Engagement</option>
                   </select>
-                  <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <div className="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none text-black">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                       <path d="M6 9l6 6 6-6" />
                     </svg>
@@ -92,7 +92,7 @@ export default function ContactCTA() {
                 <input 
                   type="email" 
                   placeholder="piyush@example.com"
-                  className="bg-transparent border-b border-zinc-200 py-3 text-[16px] font-medium focus:border-black outline-none transition-colors"
+                  className="bg-transparent border-b border-zinc-200 py-3 text-[16px] text-black font-medium focus:border-black outline-none transition-colors placeholder:text-zinc-400"
                 />
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function ContactCTA() {
               <textarea 
                 rows={4}
                 placeholder="Enter your message....."
-                className="bg-transparent border-b border-zinc-200 py-3 text-[16px] font-medium focus:border-black outline-none transition-colors resize-none"
+                className="bg-transparent border-b border-zinc-200 py-3 text-[16px] text-black font-medium focus:border-black outline-none transition-colors resize-none placeholder:text-zinc-400"
               />
             </div>
 
