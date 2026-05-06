@@ -11,7 +11,7 @@ const projects = [
     description: "Cultural fest official website with payment gateway integration and judging panel.",
     year: "2023",
     location: "NST, India",
-    image: "https://ik.imagekit.io/yatharth/image.png"
+    image: "https://i1-c.pinimg.com/1200x/7d/e3/ca/7de3cae3414ac39a43315f2f5629fcd0.jpg"
   },
   {
     id: "02",
@@ -20,7 +20,7 @@ const projects = [
     description: "Addictive arcade-style game testing precision and timing, built with Three.js.",
     year: "2024",
     location: "NST, India",
-    image: "/hyperstack_project.png"
+    image: "https://i1-c.pinimg.com/1200x/9c/93/bd/9c93bd32ab16fcfee56abf44096bd0f5.jpg"
   },
   {
     id: "03",
@@ -29,7 +29,7 @@ const projects = [
     description: "Personal finance companion tracking expenses & budgets with data visualizations.",
     year: "2023",
     location: "NST, India",
-    image: "/smartspend_project.png"
+    image: "https://i1-c.pinimg.com/1200x/5b/44/0a/5b440a039eb3eef5bbbe5c50b9e3f9a6.jpg"
   },
   {
     id: "04",
@@ -38,7 +38,7 @@ const projects = [
     description: "Web-based real-time code runner for HTML, CSS, and JavaScript.",
     year: "2024",
     location: "NST, India",
-    image: "/snippad_project.png"
+    image: "https://i1-c.pinimg.com/1200x/f4/00/45/f400450c168a7a70611e030590a11039.jpg"
   },
   {
     id: "05",
@@ -47,7 +47,7 @@ const projects = [
     description: "Official Tech Fest website for Newton School of Technology.",
     year: "2024",
     location: "NST, India",
-    image: "/neutron_project.png"
+    image: "https://ik.imagekit.io/yatharth/ARS03046%20(1).jpg?updatedAt=1776059581620"
   },
   {
     id: "06",
@@ -56,7 +56,7 @@ const projects = [
     description: "Interactive UI game testing memory skills with flipping cards.",
     year: "2023",
     location: "NST, India",
-    image: "/memory_game_project.png"
+    image: "https://i1-c.pinimg.com/736x/25/94/e8/2594e8c3f9f8c7292972ab71f23db284.jpg"
   }
 ];
 
@@ -147,50 +147,52 @@ export default function ProjectShowcase() {
         </div>
       </div>
 
-      {/* Projects List */}
-      <div className="flex flex-col w-full">
-        {projects.map((project) => (
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full reveal-trigger">
+        {projects.map((project, idx) => (
           <div 
             key={project.id}
             onMouseEnter={() => setHoveredProject(project.id)}
             onMouseLeave={() => setHoveredProject(null)}
-            className="group relative border-b border-zinc-900 py-16 md:20 reveal-trigger"
+            className="group relative overflow-hidden rounded-xl border border-white/10 bg-zinc-900/50 aspect-[4/3] md:aspect-[16/11] flex flex-col justify-end p-8 md:p-10 reveal-item cursor-pointer"
+            style={{ transitionDelay: `${idx * 100}ms` }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start relative z-10">
-              
-              {/* ID & Category (3 cols) */}
-              <div className="md:col-span-3 flex flex-col gap-6 reveal-item">
-                <span className="text-[40px] md:text-[60px] font-black text-white leading-none tracking-tighter opacity-20 group-hover:opacity-100 transition-opacity duration-500">
-                    {project.id}
-                </span>
-              </div>
-
-              {/* Title & Description (7 cols) */}
-              <div className="md:col-span-7 flex flex-col gap-8">
-                <h3 className="text-[6vw] md:text-[4vw] font-black leading-[0.85] tracking-[-0.06em] uppercase text-white reveal-item group-hover:translate-x-4 transition-transform duration-700" style={{ transitionDelay: '100ms' }}>
-                  {project.title}
-                </h3>
-                <p className="max-w-md text-[16px] md:text-[18px] font-bold leading-[1.6] text-zinc-400 reveal-item group-hover:translate-x-4 transition-transform duration-700" style={{ transitionDelay: '200ms' }}>
-                  {project.description}
-                </p>
-              </div>
-
-              {/* Year & Link (2 cols) */}
-              <div className="md:col-span-2 flex flex-col md:items-end gap-10 reveal-item" style={{ transitionDelay: '300ms' }}>
-                <span className="text-[13px] font-black text-zinc-500 uppercase tracking-widest">{project.year}</span>
-                <div className="group/link flex items-center gap-3 cursor-pointer">
-                  <div className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center group-hover/link:bg-white group-hover/link:text-black transition-all duration-500">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="-rotate-45">
-                        <path d="M7 17L17 7M17 7H7M17 7V17" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
+            {/* Background Image & Blur */}
+            <div className="absolute inset-0 z-0">
+               <img 
+                 src={project.image} 
+                 alt={project.title} 
+                 className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.2,0,0,1)] group-hover:scale-105 group-hover:blur-xl opacity-50 grayscale group-hover:grayscale-0 group-hover:opacity-30" 
+               />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/10" />
             </div>
 
-            {/* Kinetic Hover Line */}
-            <div className="absolute left-0 bottom-0 w-0 h-px bg-white group-hover:w-full transition-all duration-1000 ease-in-out" />
+            {/* Content Overlay */}
+            <div className="relative z-10 flex flex-col gap-6 transform transition-transform duration-700 ease-[cubic-bezier(0.2,0,0,1)] translate-y-8 group-hover:translate-y-0">
+               
+               {/* Header (Category & Year) */}
+               <div className="flex items-center justify-between border-b border-white/10 pb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50">{project.category}</span>
+                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30">{project.year}</span>
+               </div>
+               
+               {/* Title & Description */}
+               <div className="flex flex-col gap-3">
+                 <div className="flex items-center justify-between">
+                   <h3 className="text-3xl md:text-4xl font-black text-white leading-none tracking-tight">{project.title}</h3>
+                   {/* Arrow Icon */}
+                   <div className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center bg-black/20 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-500 translate-x-[-10px] group-hover:translate-x-0">
+                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" className="-rotate-45">
+                       <path d="M7 17L17 7M17 7H7M17 7V17" />
+                     </svg>
+                   </div>
+                 </div>
+                 <p className="text-[14px] md:text-[15px] font-semibold text-white/60 leading-[1.6] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150 max-w-[85%]">
+                   {project.description}
+                 </p>
+               </div>
+
+            </div>
           </div>
         ))}
       </div>
