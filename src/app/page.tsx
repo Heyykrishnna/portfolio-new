@@ -58,26 +58,6 @@ export default function Home() {
               </Link>
             ))}
           </div>
-
-          {/* Profile Card */}
-          <div className="flex items-center bg-white text-black p-1.5 pr-5 rounded-[4px] shadow-2xl">
-            <div className="relative w-10 h-10 overflow-hidden rounded-[2px] mr-4">
-              <Image 
-                src="/ceo-profile.png" 
-                alt="CEO" 
-                fill 
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center justify-between w-full">
-                <span className="text-[12px] font-black leading-tight tracking-tight">Meet the CEO</span>
-                <div className="w-[6px] h-[6px] bg-black ml-4" />
-              </div>
-              <span className="text-[11px] text-zinc-500 font-bold tracking-tight">Louisiana KD6</span>
-              <span className="text-[8px] text-zinc-400 font-black uppercase tracking-[0.2em] mt-0.5">CEO</span>
-            </div>
-          </div>
         </nav>
 
         {/* Hero Content Section */}
