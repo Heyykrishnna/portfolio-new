@@ -261,7 +261,6 @@ export default function Education() {
           <span className="text-white">(04)</span>
         </div>
         <span>(The Learning Journey)</span>
-        <span>2024 — 2028</span>
       </div>
 
       {/* Heading with scroll reveal */}

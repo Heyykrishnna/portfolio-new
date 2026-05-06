@@ -74,7 +74,6 @@ export default function ImpactStats() {
           <span className="text-black">(06)</span>
         </div>
         <span className="uppercase tracking-[0.3em] font-bold text-zinc-400">(Impact & Metrics)</span>
-        <span className="uppercase tracking-[0.3em] font-bold text-zinc-400">Quantitative · Growth</span>
       </div>
 
       <div className="max-w-[1400px] w-full mx-auto">

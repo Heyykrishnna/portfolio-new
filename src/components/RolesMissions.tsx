@@ -66,7 +66,6 @@ export default function RolesMissions() {
               <span className="text-white">(05)</span>
             </div>
             <span className="uppercase tracking-[0.3em]">(Roles & Missions)</span>
-            <span className="uppercase tracking-[0.3em]">Impact · 2024-2026</span>
           </div>
 
           <div className="mb-12 md:mb-20">
@@ -126,7 +125,7 @@ export default function RolesMissions() {
       </div>
 
       {/* Bottom section boundary */}
-      <div className="w-full h-px bg-zinc-900 mx-6 md:mx-10 lg:mx-12 mb-32" />
+      <div className="h-px bg-zinc-900 mx-6 md:mx-10 lg:mx-12 mb-32" />
     </section>
   )
 }
