@@ -454,9 +454,6 @@ export default function Home() {
 
       <RolesMissions />
 
-      {/* Dark (#0a0a0a) → White — matches RolesMissions bg */}
-      <div className="relative z-40 h-14 md:h-20 w-full bg-linear-to-b from-[#0a0a0a] to-white shrink-0" aria-hidden />
-
       <ImpactStats />
 
       <ContactCTA />
