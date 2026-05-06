@@ -6,39 +6,57 @@ import Image from "next/image";
 const projects = [
   {
     id: "01",
-    category: "Brand Identity",
-    title: "Neon Velocity",
-    description: "High-performance electric automotive branding focused on speed and kinetic energy.",
-    year: "2024",
-    location: "Tokyo, JP",
-    image: "/neon_velocity_project_1778096930932.png"
+    category: "Full Stack",
+    title: "Damru",
+    description: "Cultural fest official website with payment gateway integration and judging panel.",
+    year: "2023",
+    location: "NST, India",
+    image: "/damru_project.png"
   },
   {
     id: "02",
-    category: "Digital Design",
-    title: "Silent Peak",
-    description: "A minimalist mountaineering platform emphasizing solitude and elevation.",
+    category: "Game",
+    title: "HyperStack",
+    description: "Addictive arcade-style game testing precision and timing, built with Three.js.",
     year: "2024",
-    location: "Oslo, NO",
-    image: "/silent_peak_project_1778097123862.png"
+    location: "NST, India",
+    image: "/hyperstack_project.png"
   },
   {
     id: "03",
-    category: "3D Visuals",
-    title: "Void Studio",
-    description: "Exploring the intersection of architectural void and digital light through 3D renders.",
+    category: "Full Stack",
+    title: "SmartSpend",
+    description: "Personal finance companion tracking expenses & budgets with data visualizations.",
     year: "2023",
-    location: "Berlin, DE",
-    image: "/void_studio_project_1778097136988.png"
+    location: "NST, India",
+    image: "/smartspend_project.png"
   },
   {
     id: "04",
-    category: "UI/UX System",
-    title: "Chronos",
-    description: "A comprehensive design system for temporal data management and visualization.",
+    category: "System Arch",
+    title: "Snippad",
+    description: "Web-based real-time code runner for HTML, CSS, and JavaScript.",
+    year: "2024",
+    location: "NST, India",
+    image: "/snippad_project.png"
+  },
+  {
+    id: "05",
+    category: "Frontend",
+    title: "Neutron 2.0",
+    description: "Official Tech Fest website for Newton School of Technology.",
+    year: "2024",
+    location: "NST, India",
+    image: "/neutron_project.png"
+  },
+  {
+    id: "06",
+    category: "Frontend",
+    title: "Memory Game",
+    description: "Interactive UI game testing memory skills with flipping cards.",
     year: "2023",
-    location: "London, UK",
-    image: "/chronos_project_1778097183653.png"
+    location: "NST, India",
+    image: "/memory_game_project.png"
   }
 ];
 
@@ -92,10 +110,10 @@ export default function ProjectShowcase() {
     return () => cancelAnimationFrame(animationFrame);
   }, [mousePos]);
 
-  const headerText = "Design-driven studio delivering the structured visuals, refined digital system, and high-impact brand experiences shaped by aesthetics & Fuel®.";
+  const headerText = "I enjoy transforming ideas into clean, scalable, and impactful digital solutions, building responsive designs and creating meaningful user experiences.";
 
   return (
-    <section ref={sectionRef} className="project-showcase relative z-50 bg-black text-white min-h-screen w-full px-6 md:px-10 lg:px-12 py-32 flex flex-col">
+    <section id="portfolio" ref={sectionRef} className="project-showcase relative z-50 bg-black text-white min-h-screen w-full px-6 md:px-10 lg:px-12 py-32 flex flex-col">
       
       {/* Floating Image Component */}
       <div 
@@ -128,7 +146,7 @@ export default function ProjectShowcase() {
           <span className="text-white">(02)</span>
         </div>
         <span className="reveal-item">(Project Showcase)</span>
-        <span className="reveal-item">© 2025</span>
+        <span className="reveal-item">© 2026</span>
       </div>
 
       <div className="relative mb-60 reveal-trigger">

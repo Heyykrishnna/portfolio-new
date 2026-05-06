@@ -30,19 +30,19 @@ export default function ContactCTA() {
             </h2>
 
             <p className="text-[18px] md:text-[22px] font-medium leading-[1.5] text-zinc-500 max-w-md mb-20">
-              Pick a plan, submit a job request, and your <span className="text-black italic">イメージ</span> will kickoff within 24 hours.
+              I enjoy transforming ideas into clean, scalable, and impactful digital solutions. Reach out to start a conversation.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 pt-12 border-t border-zinc-100">
             <div className="flex flex-col gap-4">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Location</span>
-              <p className="text-[16px] font-bold text-black">Rajasthan, India<br /><span className="text-zinc-400">Remote Worldwide</span></p>
+              <p className="text-[16px] font-bold text-black">Sonipat, India<br /><span className="text-zinc-400">Remote Worldwide</span></p>
             </div>
             <div className="flex flex-col gap-4">
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400">Contact</span>
               <p className="text-[16px] font-bold text-black hover:text-zinc-600 transition-colors cursor-pointer">
-                khandelwalPiyush39@gmail.com
+                piyushydv.dev@gmail.com
               </p>
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function ContactCTA() {
                 <label className="text-[12px] font-black uppercase tracking-[0.2em] text-black">Last Name*</label>
                 <input 
                   type="text" 
-                  placeholder="Khandelwal"
+                  placeholder="Yadav"
                   className="bg-transparent border-b border-zinc-200 py-3 text-[16px] text-black font-medium focus:border-black outline-none transition-colors placeholder:text-zinc-400"
                 />
               </div>
@@ -91,7 +91,7 @@ export default function ContactCTA() {
                 <label className="text-[12px] font-black uppercase tracking-[0.2em] text-black">Email</label>
                 <input 
                   type="email" 
-                  placeholder="piyush@example.com"
+                  placeholder="piyushydv.dev@gmail.com"
                   className="bg-transparent border-b border-zinc-200 py-3 text-[16px] text-black font-medium focus:border-black outline-none transition-colors placeholder:text-zinc-400"
                 />
               </div>

@@ -8,29 +8,36 @@ const ROLES = [
     id: "01",
     position: "Chief Technology Officer",
     company: "Creonity",
-    brief: "Leading technical strategy and architecture for cross-stack production deployments. Mentoring a team of developers and ensuring high-fidelity implementation of creative visions through structured engineering workflows.",
-    period: "2025 — Present"
+    brief: "Leading technical direction and translating brand strategy into scalable systems. Leading technical architecture and system maintenance while collaborating with design teams.",
+    period: "Jul 2025 – Present"
   },
   {
     id: "02",
-    position: "Tech Lead",
-    company: "Neutron",
-    brief: "Architecting distributed systems and focusing on AI/ML integration into core product offerings. Spearheading technical research and development initiatives for large-scale performance optimizations.",
-    period: "2024 — 2025"
+    position: "Technical Lead",
+    company: "Neutron (Tech Fest)",
+    brief: "Scaling technical infrastructure for high-traffic event management. Coordinating cross-functional engineering teams and optimizing real-time registration toolkits.",
+    period: "Feb 2026 – Present"
   },
   {
     id: "03",
-    position: "Co-Founder",
-    company: "DCODE",
-    brief: "Established India's first student-led open-source initiative. Building a culture of transparency and collaboration while shipping robust developer tools and maintaining global community standards.",
-    period: "2024 — 2025"
+    position: "Lead Coordinator",
+    company: "StartX-NST",
+    brief: "Managing strategic planning for incubation programs. Coordinating events and workshops for budding entrepreneurs and building partnerships within the startup vertical.",
+    period: "Nov 2025 – Present"
   },
   {
     id: "04",
-    position: "Lead Developer",
-    company: "Dev Club NST",
-    brief: "Developing internal tools and fostering a community of builders at Newton School of Technology. Organizing hackathons and technical workshops to bridge the gap between theory and industry practice.",
-    period: "2023 — 2024"
+    position: "Co-Founder",
+    company: "DCODE",
+    brief: "India's first student-led open-source initiative. Led operations, coordination, and execution across diverse teams, building a culture of open-source contribution.",
+    period: "May 2025 – Present"
+  },
+  {
+    id: "05",
+    position: "Operations Lead",
+    company: "Dev Club, NST",
+    brief: "Owned cross-team coordination for community initiatives. Managed logistics for large-scale hackathons and workshops, strategic decision-making and outreach.",
+    period: "Jan 2025 – Present"
   }
 ]
 
@@ -59,7 +66,7 @@ export default function RolesMissions() {
               <span className="text-white">(05)</span>
             </div>
             <span className="uppercase tracking-[0.3em]">(Roles & Missions)</span>
-            <span className="uppercase tracking-[0.3em]">Impact · 2023-2025</span>
+            <span className="uppercase tracking-[0.3em]">Impact · 2024-2026</span>
           </div>
 
           <div className="mb-12 md:mb-20">

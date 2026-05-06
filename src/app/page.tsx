@@ -60,7 +60,7 @@ export default function Home() {
     <div className="relative min-h-[200vh] w-full bg-black text-white font-sans selection:bg-white selection:text-black">
       
       {/* Hero Section - Sticky/Fixed while scrolling */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden z-0">
+      <div id="home" className="sticky top-0 h-screen w-full overflow-hidden z-0">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60 z-10" />
           <div className="w-full h-full bg-[#0a0a0a] relative">
@@ -73,7 +73,7 @@ export default function Home() {
         <div className="relative z-20 flex flex-col h-full p-6 md:p-10 lg:p-12">
           <nav className="flex items-center justify-between w-full mb-auto">
             <div className="flex items-start gap-0.5 group cursor-pointer">
-              <span className="text-[26px] font-black tracking-[-0.04em] uppercase leading-none">Fuel</span>
+              <span className="text-[26px] font-black tracking-[-0.04em] uppercase leading-none">Piyush</span>
               <span className="text-[9px] font-bold translate-y-0.5">®</span>
             </div>
             <div className="hidden md:flex items-center gap-14 lg:gap-20">
@@ -84,48 +84,35 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-            <div className="flex items-center bg-white text-black p-1.5 pr-5 rounded-[4px] shadow-2xl">
-              <div className="relative w-10 h-10 overflow-hidden rounded-[2px] mr-4">
-                <Image src="/ceo-profile.png" alt="CEO" fill className="object-cover" />
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center justify-between w-full">
-                  <span className="text-[12px] font-black leading-tight tracking-tight">Meet the CEO</span>
-                  <div className="w-[6px] h-[6px] bg-black ml-4" />
-                </div>
-                <span className="text-[11px] text-zinc-500 font-bold tracking-tight">Louisiana KD6</span>
-                <span className="text-[8px] text-zinc-400 font-black uppercase tracking-[0.2em] mt-0.5">CEO</span>
-              </div>
-            </div>
           </nav>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center mt-12 mb-auto">
             <div className="md:col-span-5 lg:col-span-4 flex flex-col gap-10">
               <p className="text-[16px] md:text-[18px] leading-[1.45] font-bold text-white/90 tracking-tight">
-                Pick a plan, submit a job request,<br />
-                and your <span className="text-white">イメージ</span> will kickoff<br />
-                within 24 hours.
+                I craft responsive, user-friendly web applications —<br />
+                blending <span className="text-white">clean code</span> with thoughtful design<br />
+                to create meaningful digital experiences.
               </p>
-              <button className="group relative w-fit">
+              <Link href="#portfolio" className="group relative w-fit">
                 <div className="flex items-center gap-6 pb-2 border-b-[1px] border-white/30 transition-all group-hover:border-white">
                   <span className="text-[15px] font-black tracking-tight uppercase">Explore Now</span>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="rotate-[-45deg] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                     <path d="M7 17L17 7M17 7H7M17 7V17" />
                   </svg>
                 </div>
-              </button>
+              </Link>
             </div>
           </div>
 
           <div className="mt-auto">
             <div className="flex flex-col md:flex-row items-end justify-between gap-8 mb-4">
               <div className="flex flex-col gap-1 text-[14px] font-black uppercase tracking-tight">
-                <div className="flex items-center gap-2"><span className="text-white/30">01/</span><span>Strategy</span></div>
-                <span className="ml-[34px] text-white/80">Videography</span>
-                <span className="ml-[34px] text-white/80">Branding</span>
+                <div className="flex items-center gap-2"><span className="text-white/30">01/</span><span>Product Thinking</span></div>
+                <span className="ml-[34px] text-white/80">UI & UX Design</span>
+                <span className="ml-[34px] text-white/80">Full-Stack Dev</span>
               </div>
               <div className="flex items-center gap-8 pb-4">
-                <div className="text-[12px] font-black text-white/80">© 2025</div>
+                <div className="text-[12px] font-black text-white/80">© 2026</div>
                 <div className="flex items-end gap-[4px] h-10">
                   {[...Array(12)].map((_, i) => (
                     <div key={i} className={`w-[1px] transition-colors ${i === 7 ? 'h-10 bg-white/60' : (i === 0 || i === 11) ? 'h-4 bg-white/10' : 'h-3 bg-white/20'}`} />
@@ -135,8 +122,8 @@ export default function Home() {
               </div>
             </div>
             <div className="relative w-full flex items-baseline justify-between select-none">
-              <h2 className="text-[22vw] md:text-[25vw] font-black leading-[0.72] tracking-[-0.06em] uppercase text-white">Fuel</h2>
-              <h2 className="text-[22vw] md:text-[25vw] font-black leading-[0.72] tracking-[-0.06em] uppercase text-transparent [-webkit-text-stroke:2px_white] md:[-webkit-text-stroke:5px_white]">X</h2>
+              <h2 className="text-[22vw] md:text-[25vw] font-black leading-[0.72] tracking-[-0.06em] uppercase text-white">PIYUS</h2>
+              <h2 className="text-[22vw] md:text-[25vw] font-black leading-[0.72] tracking-[-0.06em] uppercase text-transparent [-webkit-text-stroke:2px_white] md:[-webkit-text-stroke:5px_white]">H</h2>
             </div>
           </div>
         </div>
@@ -144,6 +131,7 @@ export default function Home() {
 
       {/* About Us Section - Slides over Hero with a Slant */}
       <section 
+        id="about"
         ref={aboutRef}
         className="relative z-50 bg-black text-white min-h-screen w-full px-6 md:px-10 lg:px-12 py-32 flex flex-col shadow-[0_-40px_100px_rgba(0,0,0,0.3)] mt-[15vh] [clip-path:polygon(0_15vh,100%_0,100%_100%,0%_100%)]"
       >
@@ -152,13 +140,14 @@ export default function Home() {
              <div className="w-2.5 h-2.5 rounded-full bg-black" />
              <span className="text-black">(01)</span>
            </div>
-           <span>(About Us)</span>
-           <span>© 2025</span>
+           <span>(About Me)</span>
+           <span>(Piyush Yadav)</span>
+           <span>© 2026</span>
         </div>
 
         <div className="max-w-[95%] mb-40 overflow-hidden reveal-trigger">
-           <h2 ref={headingRef} className="text-[6.2vw] md:text-[5vw] font-black leading-[1.0] tracking-[-0.05em] text-white">
-             {["Design-forward", "impressive", "agency", "crafting", "bold", "visuals,", "structured", "layouts,", "and", "high-impact", "digital", "3D", "Swiss", "inspired", "by", "modern", "aesthetics®."].map((word, i) => (
+            <h2 ref={headingRef} className="text-[6.2vw] md:text-[5vw] font-black leading-[1.0] tracking-[-0.05em] text-white">
+             {["I'm", "a", "second-year", "Computer", "Science", "student", "from", "India", "passionate", "about", "building", "modern", "and", "user-friendly", "web", "applications.", "I", "focus", "on", "writing", "clean", "code,", "building", "responsive", "designs,", "and", "creating", "meaningful", "user", "experiences."].map((word, i) => (
                <span key={i} className="inline-block mr-[0.25em] transition-all duration-[1200ms] ease-[cubic-bezier(0.2,0,0,1)] translate-y-[100%] opacity-0 reveal-word" style={{ transitionDelay: `${i * 35}ms` }}>
                  {word}
                </span>
@@ -169,40 +158,40 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 reveal-trigger">
           <div className="md:col-span-5 flex flex-col gap-10">
             <p className="text-[16px] md:text-[19px] font-bold leading-[1.5] text-white/60 transition-all duration-[1200ms] opacity-0 translate-y-12 reveal-item">
-              At Fuel, we believe that design is not just about aesthetics, but about creating meaningful connections between brands and their audiences. Our approach combines technical precision with artistic intuition to deliver digital experiences that resonate.
+              I enjoy transforming ideas into clean, scalable, and impactful digital solutions. Over the past year, I’ve worked on multiple projects that strengthened my frontend, backend, and problem-solving skills.
             </p>
             <p className="text-[16px] md:text-[19px] font-bold leading-[1.5] text-white/80 transition-all duration-[1200ms] opacity-0 translate-y-12 delay-300 reveal-item">
-              Based in the heart of creativity, we push the boundaries of what's possible in the digital realm, ensuring every pixel serves a purpose and every interaction tells a story.
+              I focus on creating seamless interactions and robust architectures, ensuring every digital product I build provides real value to its users.
             </p>
           </div>
 
           <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-24">
             <div className="flex flex-col gap-6 transition-all duration-[1200ms] opacity-0 translate-y-12 delay-100 reveal-item">
-              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(Pre)</span>
+              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(Design)</span>
               <p className="text-[14px] font-bold leading-[1.6] text-zinc-500">
-                Igniting ideas with precision and intentional design. Fuel transforms raw creativity into structured visual systems that shape brands and elevate digital experiences.
+                Crafting intuitive interfaces with a focus on user experience. Combining modern design principles with functional simplicity to create impactful digital products.
               </p>
             </div>
             <div className="flex flex-col gap-6 transition-all duration-[1200ms] opacity-0 translate-y-12 delay-200 reveal-item">
-              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(+Post)</span>
+              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(Code)</span>
               <p className="text-[14px] font-bold leading-[1.6] text-zinc-500">
-                Driven by bold aesthetics and functional simplicity. Fuel blends modern form with purposeful detail, delivering refined experiences that push brands forward.
+                Building scalable and efficient web applications. Writing clean, maintainable code across the full stack to bring complex ideas to life.
               </p>
             </div>
             <div className="sm:col-span-2 border-t border-zinc-100 pt-16 mt-6 transition-all duration-[1200ms] opacity-0 translate-y-12 delay-400 reveal-item">
                <div className="flex flex-col gap-8">
                  <div className="flex items-center justify-between pb-6 border-b border-zinc-50">
                    <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(=Results)</span>
-                   <div className="flex flex-col items-end">
-                      <span className="text-[12px] font-black uppercase text-zinc-400 tracking-tight">New clients</span>
-                      <span className="text-[32px] font-black leading-none mt-1">15</span>
-                   </div>
+                    <div className="flex flex-col items-end">
+                       <span className="text-[12px] font-black uppercase text-zinc-400 tracking-tight">Projects</span>
+                       <span className="text-[32px] font-black leading-none mt-1">40+</span>
+                    </div>
                  </div>
                  <div className="flex items-center justify-between pb-6">
                     <span className="text-white">.</span>
                     <div className="flex flex-col items-end">
-                       <span className="text-[12px] font-black uppercase text-zinc-400 tracking-tight">Success rate</span>
-                       <span className="text-[32px] font-black leading-none mt-1">100%</span>
+                       <span className="text-[12px] font-black uppercase text-zinc-400 tracking-tight">Problems Solved</span>
+                       <span className="text-[32px] font-black leading-none mt-1">150+</span>
                     </div>
                  </div>
                </div>

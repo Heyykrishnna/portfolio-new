@@ -6,35 +6,35 @@ import { motion, useInView, animate, useMotionValue, useTransform } from "framer
 const STATS = [
   {
     id: "01",
-    target: 2.06,
-    suffix: "M",
-    decimals: 2,
-    label: "Global Impressions",
-    brief: "Fuel moves beyond simple authenticity, creating refined systems that shape digital presence."
+    target: 2,
+    suffix: "+",
+    decimals: 0,
+    label: "Years Experience",
+    brief: "Over two years of dedicated focus on building modern web applications and solving complex technical challenges."
   },
   {
     id: "02",
-    target: 160,
-    suffix: "K",
-    decimals: 0,
-    label: "Community Reach",
-    brief: "Elevating identity with structured clarity. Fuel crafts experiences that extend far beyond visual form."
-  },
-  {
-    id: "03",
-    target: 750,
-    suffix: "+",
-    decimals: 0,
-    label: "Creative Hours Logged",
-    brief: "Through precision and intention, Fuel transforms ideas into cohesive narratives that define brands."
-  },
-  {
-    id: "04",
-    target: 257,
+    target: 40,
     suffix: "+",
     decimals: 0,
     label: "Projects Completed",
-    brief: "Blending modern aesthetics with functional design, Fuel delivers refined solutions that push brands."
+    brief: "Successfully delivered diverse projects ranging from full-stack platforms to interactive games and system tools."
+  },
+  {
+    id: "03",
+    target: 150,
+    suffix: "+",
+    decimals: 0,
+    label: "Problems Solved",
+    brief: "A strong foundation in algorithmic problem-solving and technical research, ensuring robust and efficient solutions."
+  },
+  {
+    id: "04",
+    target: 5,
+    suffix: "/5",
+    decimals: 0,
+    label: "Core Skill Mastery",
+    brief: "Exceptional proficiency in modern technologies like React, JavaScript, and Python, delivering premium quality."
   }
 ]
 
