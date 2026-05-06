@@ -317,12 +317,12 @@ export default function Home() {
       <section
         id="about"
         ref={aboutRef}
-        className="relative z-50 bg-black text-white min-h-screen w-full px-6 md:px-10 lg:px-12 py-32 flex flex-col shadow-[0_-40px_100px_rgba(0,0,0,0.3)] mt-[15vh] [clip-path:polygon(0_15vh,100%_0,100%_100%,0%_100%)]"
+        className="relative z-50 bg-black text-white min-h-screen w-full px-6 md:px-10 lg:px-12 py-32 flex flex-col shadow-[0_-40px_100px_rgba(0,0,0,0.3)] scroll-mt-28"
       >
-        <div className="flex items-center justify-between w-full border-t border-zinc-200 pt-8 mb-24 text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">
+        <div className="flex items-center justify-between w-full border-t border-zinc-700 pt-8 mb-24 text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">
           <div className="flex items-center gap-2">
-            <div className="w-2.5 h-2.5 rounded-full bg-black" />
-            <span className="text-black">(01)</span>
+            <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
+            <span className="text-zinc-500">(01)</span>
           </div>
           <span>(About Me)</span>
           <span>(Piyush Yadav)</span>
@@ -460,9 +460,6 @@ export default function Home() {
       <ImpactStats />
 
       <ContactCTA />
-
-      {/* White → Footer black — symmetric band */}
-      <div className="relative z-40 h-14 md:h-20 w-full bg-linear-to-b from-white to-black shrink-0" aria-hidden />
 
       <Footer />
 

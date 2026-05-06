@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="border-t border-black-border bg-black">
+      <footer className="relative z-30 border-t border-zinc-800 bg-black">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-b border-black-border">
           <div className="p-8 lg:p-10 border-r border-black-border flex flex-col gap-5">
             {[
