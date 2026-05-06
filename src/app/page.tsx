@@ -276,16 +276,17 @@ export default function Home() {
           <span>© 2026</span>
         </div>
 
-        <div className="max-w-[95%] mb-40 overflow-hidden reveal-trigger">
+        {/* Heading — reduced size */}
+        <div className="mb-20 overflow-hidden reveal-trigger">
           <h2
             ref={headingRef}
-            className="text-[6.2vw] md:text-[5vw] font-black leading-[1.0] tracking-[-0.05em] text-white"
+            className="text-[4vw] md:text-[5.2vw] font-black leading-[1.1] tracking-[-0.04em] text-white max-w-[70%]"
           >
-            {["I'm", "a", "second-year", "Computer", "Science", "student", "from", "India", "passionate", "about", "building", "modern", "and", "user-friendly", "web", "applications.", "I", "focus", "on", "writing", "clean", "code,", "building", "responsive", "designs,", "and", "creating", "meaningful", "user", "experiences."].map((word, i) => (
+            {["Building", "digital", "products", "that", "are", "clean,", "fast,", "and", "built", "to", "last."].map((word, i) => (
               <span
                 key={i}
-                className="inline-block mr-[0.25em] transition-all duration-[1200ms] ease-[cubic-bezier(0.2,0,0,1)] translate-y-[100%] opacity-0 reveal-word"
-                style={{ transitionDelay: `${i * 35}ms` }}
+                className="inline-block mr-[0.28Rem] transition-all duration-[1000ms] ease-[cubic-bezier(0.2,0,0,1)] translate-y-[100%] opacity-0 reveal-word"
+                style={{ transitionDelay: `${i * 50}ms` }}
               >
                 {word}
               </span>
@@ -293,48 +294,93 @@ export default function Home() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-24 reveal-trigger">
-          <div className="md:col-span-5 flex flex-col gap-10">
-            <p className="text-[16px] md:text-[19px] font-bold leading-[1.5] text-white/60 transition-all duration-[1200ms] opacity-0 translate-y-12 reveal-item">
-              I enjoy transforming ideas into clean, scalable, and impactful digital solutions. Over the past year, I've worked on multiple projects that strengthened my frontend, backend, and problem-solving skills.
-            </p>
-            <p className="text-[16px] md:text-[19px] font-bold leading-[1.5] text-white/80 transition-all duration-[1200ms] opacity-0 translate-y-12 delay-300 reveal-item">
-              I focus on creating seamless interactions and robust architectures, ensuring every digital product I build provides real value to its users.
-            </p>
-          </div>
+        {/* Two-column: Left rich text | Right small image */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-16 md:gap-24 items-start reveal-trigger">
 
-          <div className="md:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-x-16 gap-y-24">
-            <div className="flex flex-col gap-6 transition-all duration-[1200ms] opacity-0 translate-y-12 delay-100 reveal-item">
-              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(Design)</span>
-              <p className="text-[14px] font-bold leading-[1.6] text-zinc-500">
-                Crafting intuitive interfaces with a focus on user experience. Combining modern design principles with functional simplicity to create impactful digital products.
-              </p>
-            </div>
-            <div className="flex flex-col gap-6 transition-all duration-[1200ms] opacity-0 translate-y-12 delay-200 reveal-item">
-              <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(Code)</span>
-              <p className="text-[14px] font-bold leading-[1.6] text-zinc-500">
-                Building scalable and efficient web applications. Writing clean, maintainable code across the full stack to bring complex ideas to life.
-              </p>
-            </div>
-            <div className="sm:col-span-2 border-t border-zinc-100 pt-16 mt-6 transition-all duration-[1200ms] opacity-0 translate-y-12 delay-400 reveal-item">
-              <div className="flex flex-col gap-8">
-                <div className="flex items-center justify-between pb-6 border-b border-zinc-50">
-                  <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(=Results)</span>
-                  <div className="flex flex-col items-end">
-                    <span className="text-[12px] font-black uppercase text-zinc-400 tracking-tight">Projects</span>
-                    <span className="text-[32px] font-black leading-none mt-1">40+</span>
+          {/* LEFT — enhanced text */}
+          <div className="flex flex-col gap-8 max-w-[580px]">
+
+            {/* Bio paragraphs */}
+            <p className="text-[15px] md:text-[16px] font-semibold leading-[1.8] text-white/55 transition-all duration-[1000ms] opacity-0 translate-y-10 reveal-item">
+              I'm a second-year Computer Science &amp; AI student at Newton School of Technology, Sonipat. I'm passionate about building modern, user-friendly web applications — turning ideas into clean, scalable digital products that actually matter.
+            </p>
+            <p className="text-[15px] md:text-[16px] font-semibold leading-[1.8] text-white/75 transition-all duration-[1000ms] opacity-0 translate-y-10 delay-100 reveal-item">
+              Over the past two years I've shipped 40+ projects — from cultural-fest platforms with live payment gateways to arcade games and real-time code runners. I care deeply about clean code, thoughtful UI, and the experience behind every interaction.
+            </p>
+
+            {/* What I do */}
+            <div className="flex flex-col gap-3 pt-6 border-t border-white/10 transition-all duration-[1000ms] opacity-0 translate-y-10 delay-150 reveal-item">
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30">What I do</span>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-1">
+                {[
+                  { label: "Product Thinking", desc: "Turning ideas into practical digital solutions." },
+                  { label: "UI/UX Design", desc: "Clean, responsive, and intuitive interfaces." },
+                  { label: "Full-Stack Dev", desc: "Scalable apps with modern technologies." },
+                ].map((item) => (
+                  <div key={item.label} className="flex flex-col gap-1.5">
+                    <span className="text-[12px] font-black text-white/80">{item.label}</span>
+                    <span className="text-[12px] font-medium text-white/35 leading-[1.6]">{item.desc}</span>
                   </div>
-                </div>
-                <div className="flex items-center justify-between pb-6">
-                  <span className="text-white">.</span>
-                  <div className="flex flex-col items-end">
-                    <span className="text-[12px] font-black uppercase text-zinc-400 tracking-tight">Problems Solved</span>
-                    <span className="text-[32px] font-black leading-none mt-1">150+</span>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
+
+            {/* Current roles */}
+            <div className="flex flex-col gap-3 pt-6 border-t border-white/10 transition-all duration-[1000ms] opacity-0 translate-y-10 delay-200 reveal-item">
+              <span className="text-[10px] font-black uppercase tracking-[0.25em] text-white/30">Currently</span>
+              <div className="flex flex-col gap-2">
+                {[
+                  { role: "CTO", org: "Creonity" },
+                  { role: "Technical Lead", org: "Neutron Tech Fest" },
+                  { role: "Co-Founder", org: "DCODE — Student Open-Source" },
+                  { role: "Operations Lead", org: "Dev Club, NST" },
+                ].map((r) => (
+                  <div key={r.role + r.org} className="flex items-center gap-2">
+                    <div className="w-1 h-1 rounded-full bg-white/20 shrink-0" />
+                    <span className="text-[13px] font-semibold text-white/65">{r.role}</span>
+                    <span className="text-[13px] text-white/30">@</span>
+                    <span className="text-[13px] font-semibold text-white/50">{r.org}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mini stats */}
+            <div className="flex items-center gap-8 pt-6 border-t border-white/10 transition-all duration-[1000ms] opacity-0 translate-y-10 delay-250 reveal-item">
+              {[
+                { val: "40+", label: "Projects" },
+                { val: "150+", label: "Problems Solved" },
+                { val: "2+", label: "Years Coding" },
+              ].map((s, i) => (
+                <div key={s.label} className="flex items-center gap-8">
+                  {i !== 0 && <div className="w-px h-8 bg-white/15" />}
+                  <div className="flex flex-col gap-0.5">
+                    <span className="text-[26px] font-black leading-none">{s.val}</span>
+                    <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-white/35">{s.label}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Available */}
+            <div className="flex items-center gap-2.5 transition-all duration-[1000ms] opacity-0 translate-y-10 delay-300 reveal-item">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-white/35">Available for freelance &amp; internships — Sonipat, India (Remote)</span>
+            </div>
           </div>
+
+          {/* RIGHT — small image, no bg, no shadow */}
+          <div className="flex flex-col gap-3 w-[220px] md:w-[600px] shrink-0 transition-all duration-[1000ms] opacity-0 translate-y-10 delay-200 reveal-item">
+            <div className="w-full aspect-[3/4] overflow-hidden">
+              {/* Replace src with your image link */}
+              <img
+                src="https://ik.imagekit.io/yatharth/ChatGPT%20Image%20May%207,%202026,%2003_46_45%20AM.png"
+                alt="Piyush Yadav"
+                className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+
         </div>
       </section>
 
