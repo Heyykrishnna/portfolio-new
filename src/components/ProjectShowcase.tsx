@@ -117,7 +117,7 @@ export default function ProjectShowcase() {
       
       {/* Floating Image Component */}
       <div 
-        className={`fixed pointer-events-none z-[100] w-[400px] h-[250px] overflow-hidden transition-opacity duration-500 ease-out ${hoveredProject ? 'opacity-100' : 'opacity-0'}`}
+        className={`fixed pointer-events-none z-100 w-[400px] h-[250px] overflow-hidden transition-opacity duration-500 ease-out ${hoveredProject ? 'opacity-100' : 'opacity-0'}`}
         style={{
           left: `${imagePos.x}px`,
           top: `${imagePos.y}px`,
@@ -156,7 +156,7 @@ export default function ProjectShowcase() {
                 {headerText.split(" ").map((word, i) => (
                     <span 
                         key={i} 
-                        className={`inline-block mr-[0.25em] transition-all duration-[1000ms] ease-out reveal-item`}
+                        className={`inline-block mr-[0.25em] transition-all duration-1000 ease-out reveal-item`}
                         style={{ 
                             transitionDelay: `${i * 40}ms`,
                             opacity: 0,
@@ -204,7 +204,7 @@ export default function ProjectShowcase() {
                 <span className="text-[13px] font-black text-zinc-500 uppercase tracking-widest">{project.year}</span>
                 <div className="group/link flex items-center gap-3 cursor-pointer">
                   <div className="w-10 h-10 rounded-full border border-zinc-800 flex items-center justify-center group-hover/link:bg-white group-hover/link:text-black transition-all duration-500">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="rotate-[-45deg]">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="-rotate-45">
                         <path d="M7 17L17 7M17 7H7M17 7V17" />
                     </svg>
                   </div>
@@ -214,7 +214,7 @@ export default function ProjectShowcase() {
             </div>
 
             {/* Kinetic Hover Line */}
-            <div className="absolute left-0 bottom-0 w-0 h-[1px] bg-white group-hover:w-full transition-all duration-1000 ease-in-out" />
+            <div className="absolute left-0 bottom-0 w-0 h-px bg-white group-hover:w-full transition-all duration-1000 ease-in-out" />
           </div>
         ))}
       </div>

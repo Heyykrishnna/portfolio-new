@@ -191,9 +191,9 @@ export default function Skills() {
 
         {/* Fog gradients for depth */}
         <div className="absolute inset-x-0 top-0 h-[40%] pointer-events-none z-20 
-          bg-gradient-to-b from-white via-white/80 to-transparent" />
+          bg-linear-to-b from-white via-white/80 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 h-[40%] pointer-events-none z-20 
-          bg-gradient-to-t from-white via-white/80 to-transparent" />
+          bg-linear-to-t from-white via-white/80 to-transparent" />
 
         {/* Bottom Progress UI */}
         <motion.div
@@ -210,12 +210,12 @@ export default function Skills() {
 
         {/* Side progress rail */}
         <div className="absolute right-12 top-1/2 -translate-y-1/2 h-48 w-px bg-[#1a1614]/5 hidden md:flex flex-col justify-between z-30">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#1a1614]/10 -ml-[2px]" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#1a1614]/10 ml-[-2px]" />
           <motion.div
             className="absolute top-0 left-0 w-full bg-[#1a1614]/40 origin-top"
             style={{ scaleY: smoothProgress }}
           />
-          <div className="w-1.5 h-1.5 rounded-full bg-[#1a1614]/10 -ml-[2px]" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#1a1614]/10 ml-[-2px]" />
         </div>
 
       </div>

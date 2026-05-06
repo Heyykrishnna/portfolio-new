@@ -24,12 +24,12 @@ export default function ContactCTA() {
               <span className="text-[11px] font-black uppercase tracking-[0.2em] text-zinc-400">(Get In Touch)</span>
             </div>
             
-            <h2 className="text-[10vw] lg:text-[7vw] font-bold leading-[0.85] tracking-[-0.05em] text-black uppercase mb-12">
+            <h2 className="text-[10vw] lg:text-[7vw] font-bold leading-[0.85] tracking-tighter text-black uppercase mb-12">
               Let's <br />
               <span className="text-zinc-300">Connect"</span>
             </h2>
 
-            <p className="text-[18px] md:text-[22px] font-medium leading-[1.5] text-zinc-500 max-w-md mb-20">
+            <p className="text-[18px] md:text-[22px] font-medium leading-normal text-zinc-500 max-w-md mb-20">
               I enjoy transforming ideas into clean, scalable, and impactful digital solutions. Reach out to start a conversation.
             </p>
           </div>

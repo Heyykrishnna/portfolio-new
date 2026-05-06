@@ -70,18 +70,18 @@ export default function RolesMissions() {
           </div>
 
           <div className="mb-12 md:mb-20">
-            <h2 className="text-[7vw] md:text-[5vw] font-black leading-[1.0] tracking-[-0.05em] text-white uppercase">
+            <h2 className="text-[7vw] md:text-[5vw] font-black leading-none tracking-tighter text-white uppercase">
                 Core <span className="text-zinc-800">&</span> Ventures
             </h2>
           </div>
 
           {/* Horizontal Scrolling Area */}
-          <div className="flex-grow flex items-center relative">
+          <div className="grow flex items-center relative">
             <motion.div style={{ x }} className="flex gap-6 md:gap-8 lg:gap-12">
               {ROLES.map((role) => (
                 <div 
                   key={role.id}
-                  className="flex-shrink-0 w-[85vw] font-bdoGrotesk sm:w-[400px] md:w-[500px] lg:w-[600px] aspect-[4/3] md:aspect-[1.4/1] bg-white rounded-xl p-10 md:p-14 flex flex-col shadow-2xl"
+                  className="shrink-0 w-[85vw] font-bdoGrotesk sm:w-[400px] md:w-[500px] lg:w-[600px] aspect-4/3 md:aspect-[1.4/1] bg-white rounded-xl p-10 md:p-14 flex flex-col shadow-2xl"
                 >
                    <div className="flex flex-col gap-6 md:gap-8">
                       <div className="flex flex-col gap-2">
@@ -108,7 +108,7 @@ export default function RolesMissions() {
               ))}
               
               {/* Buffer space at the end */}
-              <div className="flex-shrink-0 w-[20vw]" />
+              <div className="shrink-0 w-[20vw]" />
             </motion.div>
 
             {/* Decorative Scroll Indicator (Inspired by the image) */}

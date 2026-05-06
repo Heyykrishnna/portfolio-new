@@ -152,7 +152,7 @@ function MilestoneRow({
       <div className="flex items-center justify-between px-5 py-4">
         <div className="flex flex-col gap-1.5">
           <div className="flex items-center gap-2.5">
-            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: dot }} />
+            <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: dot }} />
             <span className={`text-[14px] font-semibold tracking-tight transition-colors duration-300 ${isActive ? "text-white" : "text-zinc-500"}`}>
               {m.phase}
             </span>
