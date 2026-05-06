@@ -237,13 +237,13 @@ export default function Home() {
       {/* Black → White diagonal transition */}
       <div className="relative z-40 bg-white" style={{ marginTop: "-2px" }}>
         <svg
-          viewBox="0 0 1440 80"
+          viewBox="0 0 1440 120"
           preserveAspectRatio="none"
           className="w-full block"
-          style={{ height: "80px", display: "block" }}
+          style={{ height: "120px", display: "block" }}
           xmlns="http://www.w3.org/2000/svg"
         >
-          <polygon points="0,80 1440,80 1440,0" fill="black" />
+          <path d="M0 0L1440 0V120L0 0Z" fill="black" />
         </svg>
       </div>
 
