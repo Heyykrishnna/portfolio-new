@@ -24,7 +24,7 @@ export default function RootLayout({
       lang="en"
       className={`${bdoGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col font-sans overflow-x-hidden">
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>

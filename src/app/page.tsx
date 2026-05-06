@@ -50,6 +50,7 @@ export default function Home() {
   const mousePos = useRef({ x: -200, y: -200 });
   const cursorPos = useRef({ x: -200, y: -200 });
   const [hovered, setHovered] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrambled = useScramble("PIYUSH YADAV", 300);
 
@@ -116,6 +117,80 @@ export default function Home() {
         />
       </div>
 
+      {/* ── STICKY NAV ── */}
+      <nav className="fixed top-0 left-0 z-[100] flex items-center justify-between w-full px-6 md:px-14 pt-8 md:pt-10 mix-blend-difference pointer-events-none">
+        {/* Left: Logo */}
+        <div className="flex items-center gap-1.5 text-white/90 z-50 pointer-events-auto">
+          <span className="text-[13px] font-black tracking-[0.22em] uppercase">PY</span>
+          <span className="w-1 h-1 rounded-full bg-white/40" />
+          <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/50">Portfolio</span>
+        </div>
+
+        {/* Center: Desktop Links */}
+        <div className="hidden md:flex items-center gap-12 lg:gap-16 absolute left-1/2 -translate-x-1/2 pointer-events-auto">
+          {["Work", "About", "Skills", "Contact"].map((label) => (
+            <Link
+              key={label}
+              href={`#${label.toLowerCase()}`}
+              className="text-[10px] font-bold tracking-[0.2em] uppercase text-white/50 hover:text-white transition-colors duration-300"
+            >
+              {label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Right: Availability (Desktop) + Mobile Toggle */}
+        <div className="flex items-center gap-6 z-50 pointer-events-auto">
+          <div className="hidden md:flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-white/50">Open to work</span>
+          </div>
+          {/* Mobile Menu Toggle */}
+          <button
+            className="md:hidden flex flex-col items-end justify-center gap-[5px] w-8 h-8 focus:outline-none group"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className={`h-[1.5px] bg-white transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "w-6 rotate-45 translate-y-[6.5px]" : "w-6"}`} />
+            <span className={`h-[1.5px] bg-white transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "opacity-0" : "w-4 group-hover:w-6"}`} />
+            <span className={`h-[1.5px] bg-white transition-all duration-300 ease-in-out ${isMobileMenuOpen ? "w-6 -rotate-45 -translate-y-[6.5px]" : "w-5 group-hover:w-6"}`} />
+          </button>
+        </div>
+      </nav>
+
+      {/* ── MOBILE MENU OVERLAY ── */}
+      <div
+        className={`md:hidden fixed inset-0 z-[90] bg-black flex flex-col items-center justify-center gap-10 transition-all duration-500 ease-[cubic-bezier(0.2,0,0,1)] ${
+          isMobileMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+      >
+        {["Work", "About", "Skills", "Contact"].map((label, i) => (
+          <Link
+            key={label}
+            href={`#${label.toLowerCase()}`}
+            onClick={() => setIsMobileMenuOpen(false)}
+            className="text-4xl font-black tracking-[0.15em] uppercase text-white hover:text-white/60 transition-all duration-500"
+            style={{ 
+              transitionDelay: isMobileMenuOpen ? `${i * 100 + 150}ms` : "0ms", 
+              opacity: isMobileMenuOpen ? 1 : 0, 
+              transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)" 
+            }}
+          >
+            {label}
+          </Link>
+        ))}
+        <div 
+          className="flex items-center gap-3 mt-8 transition-all duration-700"
+          style={{ 
+            transitionDelay: isMobileMenuOpen ? `600ms` : "0ms", 
+            opacity: isMobileMenuOpen ? 1 : 0,
+            transform: isMobileMenuOpen ? "translateY(0)" : "translateY(20px)"
+          }}
+        >
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/50">Open to work</span>
+        </div>
+      </div>
+
       {/* ══════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════ */}
@@ -158,31 +233,7 @@ export default function Home() {
           <div className="absolute top-0 bottom-0 w-px bg-black/[0.05]" style={{ left: "75%" }} />
         </div>
 
-        {/* ── NAV ── */}
-        <nav className="relative z-30 flex items-center justify-between w-full px-8 md:px-14 pt-8 md:pt-10">
-          <div className="flex items-center gap-1.5">
-            <span className="text-[13px] font-black tracking-[0.22em] uppercase text-black/90">PY</span>
-            <span className="w-1 h-1 rounded-full bg-black/30" />
-            <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-black/40">Portfolio</span>
-          </div>
-
-          <div className="hidden md:flex items-center gap-12 lg:gap-16">
-            {["Work", "About", "Skills", "Contact"].map((label) => (
-              <Link
-                key={label}
-                href={`#${label.toLowerCase()}`}
-                className="text-[10px] font-bold tracking-[0.2em] uppercase text-black/40 hover:text-black transition-colors duration-300"
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-[10px] font-bold tracking-[0.18em] uppercase text-black/40">Open to work</span>
-          </div>
-        </nav>
+        {/* ── NAV DELETED ── */}
 
         {/* ── MAIN CONTENT ── */}
         <div className="relative z-20 flex flex-col justify-between h-[calc(100%-76px)] px-8 md:px-14 pb-8 md:pb-10">
@@ -280,7 +331,7 @@ export default function Home() {
         <div className="mb-20 overflow-hidden reveal-trigger">
           <h2
             ref={headingRef}
-            className="text-[4vw] md:text-[5.2vw] font-black leading-[1.1] tracking-[-0.04em] text-white max-w-[70%]"
+            className="text-[7vw] md:text-[5.2vw] font-black leading-[1.1] tracking-[-0.04em] text-white max-w-[70%]"
           >
             {["Building", "digital", "products", "that", "are", "clean,", "fast,", "and", "built", "to", "last."].map((word, i) => (
               <span
@@ -370,7 +421,7 @@ export default function Home() {
           </div>
 
           {/* RIGHT — small image, no bg, no shadow */}
-          <div className="flex flex-col gap-3 w-[220px] md:w-[600px] shrink-0 transition-all duration-[1000ms] opacity-0 translate-y-10 delay-200 reveal-item">
+          <div className="flex-col hidden md:block gap-3 w-[220px] md:w-[600px] shrink-0 transition-all duration-[1000ms] opacity-0 translate-y-10 delay-200 reveal-item">
             <div className="w-full aspect-[3/4] overflow-hidden">
               {/* Replace src with your image link */}
               <img
