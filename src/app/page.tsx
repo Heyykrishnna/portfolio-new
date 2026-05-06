@@ -6,6 +6,7 @@ import { useEffect, useState, useRef } from "react";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
+import Footer from "@/components/Footer";
 
 
 export default function Home() {
@@ -228,6 +229,8 @@ export default function Home() {
 
       {/* Education Section */}
       <Education />
+
+      <Footer />
 
 
       <style jsx global>{`

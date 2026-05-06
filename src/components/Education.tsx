@@ -268,7 +268,7 @@ export default function Education() {
       <ScrollHeading text1={headingText1} text2={headingText2} />
 
       {/* Split layout (The "Skills" part as requested) */}
-      <div className="grid grid-cols-1 md:grid-cols-[420px_1fr] min-h-screen border-t border-zinc-900 pt-20">
+      <div className="grid grid-cols-1 md:grid-cols-[420px_1fr] min-h-screen border-t border-zinc-900">
 
         {/* LEFT: Accordion */}
         <div className="flex flex-col md:border-r border-zinc-900 pr-0 md:pr-10">
