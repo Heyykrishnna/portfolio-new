@@ -7,6 +7,8 @@ const bdoGrotesk = localFont({
   variable: "--font-bdo-grotesk",
 });
 
+import SmoothScroll from "@/components/SmoothScroll";
+
 export const metadata: Metadata = {
   title: "Piyush Yadav | Full-Stack Developer",
   description: "Portfolio of Piyush Yadav, a Full-Stack Developer and UI/UX Designer crafting responsive, user-friendly web applications.",
@@ -22,7 +24,9 @@ export default function RootLayout({
       lang="en"
       className={`${bdoGrotesk.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <SmoothScroll>{children}</SmoothScroll>
+      </body>
     </html>
   );
 }
