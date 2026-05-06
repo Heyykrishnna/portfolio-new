@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import ProjectShowcase from "@/components/ProjectShowcase";
+import Skills from "@/components/Skills";
+import Education from "@/components/Education";
 
 
 export default function Home() {
@@ -207,6 +209,25 @@ export default function Home() {
       
       {/* Project Showcase Section */}
       <ProjectShowcase />
+
+      {/* Skills Section */}
+      <Skills />
+
+      {/* White → Black diagonal transition */}
+      <div className="relative z-40 bg-black" style={{ marginTop: "-2px" }}>
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          className="w-full block"
+          style={{ height: "80px", display: "block" }}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon points="0,0 1440,0 1440,80" fill="white" />
+        </svg>
+      </div>
+
+      {/* Education Section */}
+      <Education />
 
 
       <style jsx global>{`
