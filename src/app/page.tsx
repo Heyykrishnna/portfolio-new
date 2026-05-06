@@ -6,6 +6,8 @@ import { useEffect, useState, useRef } from "react";
 import ProjectShowcase from "@/components/ProjectShowcase";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
+import RolesMissions from "@/components/RolesMissions";
+import ImpactStats from "@/components/ImpactStats";
 import Footer from "@/components/Footer";
 
 
@@ -229,6 +231,23 @@ export default function Home() {
 
       {/* Education Section */}
       <Education />
+
+      <RolesMissions />
+
+      {/* Black → White diagonal transition */}
+      <div className="relative z-40 bg-white" style={{ marginTop: "-2px" }}>
+        <svg
+          viewBox="0 0 1440 80"
+          preserveAspectRatio="none"
+          className="w-full block"
+          style={{ height: "80px", display: "block" }}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polygon points="0,80 1440,80 1440,0" fill="black" />
+        </svg>
+      </div>
+
+      <ImpactStats />
 
       <Footer />
 
