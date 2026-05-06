@@ -11,7 +11,7 @@ const projects = [
     description: "Cultural fest official website with payment gateway integration and judging panel.",
     year: "2023",
     location: "NST, India",
-    image: "/damru_project.png"
+    image: "https://ik.imagekit.io/yatharth/image.png"
   },
   {
     id: "02",
@@ -114,30 +114,6 @@ export default function ProjectShowcase() {
 
   return (
     <section id="portfolio" ref={sectionRef} className="project-showcase relative z-50 bg-black text-white min-h-screen w-full px-6 md:px-10 lg:px-12 py-32 flex flex-col">
-      
-      {/* Floating Image Component */}
-      <div 
-        className={`fixed pointer-events-none z-100 w-[400px] h-[250px] overflow-hidden transition-opacity duration-500 ease-out ${hoveredProject ? 'opacity-100' : 'opacity-0'}`}
-        style={{
-          left: `${imagePos.x}px`,
-          top: `${imagePos.y}px`,
-          transform: `translate(-50%, -50%) rotate(${(mousePos.x - imagePos.x) * 0.1}deg)`,
-        }}
-      >
-        {projects.map((project) => (
-          <div 
-            key={project.id}
-            className={`absolute inset-0 transition-opacity duration-500 ${hoveredProject === project.id ? 'opacity-100 scale-105' : 'opacity-0 scale-125'}`}
-          >
-            <Image 
-              src={project.image} 
-              alt={project.title} 
-              fill 
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
-            />
-          </div>
-        ))}
-      </div>
 
       {/* Projects List Header */}
       <div className="flex items-center justify-between w-full border-t border-zinc-800 pt-8 mb-24 text-[11px] font-black uppercase tracking-[0.2em] text-zinc-500 reveal-trigger">
