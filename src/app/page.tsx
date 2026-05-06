@@ -102,8 +102,7 @@ export default function Home() {
   if (!mounted) return null;
 
   return (
-    <div className="relative min-h-[200vh] w-full bg-[#f5f5f3] text-black font-sans selection:bg-black selection:text-white">
-
+    <main className="relative w-full overflow-x-clip bg-[#f5f5f3] text-black font-sans selection:bg-black selection:text-white">
       {/* ── Custom cursor ── */}
       <div
         ref={cursorRef}
@@ -191,6 +190,8 @@ export default function Home() {
         </div>
       </div>
 
+      {/* min-h + sticky scope: only this block so the hero does not cover the rest of the page */}
+      <div className="relative min-h-[200vh] w-full">
       {/* ══════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════ */}
@@ -309,6 +310,7 @@ export default function Home() {
             <div className="text-[9px] font-bold tracking-[0.2em] uppercase text-black/25">© 2026</div>
           </div>
         </div>
+      </div>
       </div>
 
       {/* ── About Section ─────────────────────────────────────── */}
@@ -438,43 +440,34 @@ export default function Home() {
       {/* Project Showcase Section */}
       <ProjectShowcase />
 
+      {/* Black → White — symmetric band (no wedge gaps) */}
+      <div className="relative z-40 h-14 md:h-20 w-full bg-linear-to-b from-black to-white shrink-0" aria-hidden />
+
       {/* Skills Section */}
       <Skills />
 
-      {/* White → Black diagonal transition */}
-      <div className="relative z-40 bg-black" style={{ marginTop: "-2px" }}>
-        <svg viewBox="0 0 1440 80" preserveAspectRatio="none" className="w-full block" style={{ height: "80px" }} xmlns="http://www.w3.org/2000/svg">
-          <polygon points="0,0 1440,0 1440,80" fill="white" />
-        </svg>
-      </div>
+      {/* White → Black — symmetric band */}
+      <div className="relative z-40 h-14 md:h-20 w-full bg-linear-to-b from-white to-black shrink-0" aria-hidden />
 
       {/* Education Section */}
       <Education />
 
       <RolesMissions />
 
-      {/* Black → White diagonal transition */}
-      <div className="relative z-40 bg-white" style={{ marginTop: "-2px" }}>
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full block" style={{ height: "120px" }} xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0L1440 0V120L0 0Z" fill="black" />
-        </svg>
-      </div>
+      {/* Dark (#0a0a0a) → White — matches RolesMissions bg */}
+      <div className="relative z-40 h-14 md:h-20 w-full bg-linear-to-b from-[#0a0a0a] to-white shrink-0" aria-hidden />
 
       <ImpactStats />
 
       <ContactCTA />
 
-      {/* White → Black diagonal transition */}
-      <div className="relative z-40 bg-black" style={{ marginTop: "-2px" }}>
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full block" style={{ height: "120px" }} xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0L1440 0L0 120Z" fill="white" />
-        </svg>
-      </div>
+      {/* White → Footer black — symmetric band */}
+      <div className="relative z-40 h-14 md:h-20 w-full bg-linear-to-b from-white to-black shrink-0" aria-hidden />
 
       <Footer />
 
       <style jsx global>{`
-        body { margin: 0; padding: 0; background: #f5f5f3; overflow-x: hidden; cursor: none; }
+        body { margin: 0; padding: 0; background: #f5f5f3; overflow-x: clip; cursor: none; }
         *, *::before, *::after { box-sizing: border-box; }
 
         .reveal-word, .reveal-item { will-change: transform, opacity; }
@@ -510,6 +503,6 @@ export default function Home() {
         }
         .scroll-dot { animation: scrollBounce 1.8s ease-in-out infinite; }
       `}</style>
-    </div>
+    </main>
   );
 }
