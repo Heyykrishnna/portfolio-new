@@ -3,6 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
+import ProjectShowcase from "@/components/ProjectShowcase";
+
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -13,8 +15,8 @@ export default function Home() {
     setMounted(true);
     
     const observerOptions = {
-      threshold: 0.15,
-      rootMargin: "0px 0px -100px 0px"
+      threshold: 0.05,
+      rootMargin: "0px 0px -50px 0px"
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -31,7 +33,17 @@ export default function Home() {
     }, observerOptions);
 
     const revealTriggers = document.querySelectorAll('.reveal-trigger');
-    revealTriggers.forEach(trigger => observer.observe(trigger));
+    revealTriggers.forEach(trigger => {
+      // Clean up any existing style if re-running
+      const items = trigger.querySelectorAll('.reveal-item, .reveal-word');
+      items.forEach((item: any) => {
+        if (trigger.classList.contains('revealed')) {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+        }
+      });
+      observer.observe(trigger);
+    });
 
     return () => observer.disconnect();
   }, [mounted]);
@@ -192,10 +204,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      {/* Project Showcase Section */}
+      <ProjectShowcase />
+
 
       <style jsx global>{`
         body { margin: 0; padding: 0; background: black; overflow-x: hidden; }
         .reveal-word, .reveal-item { will-change: transform, opacity; }
+        
+        /* CSS Fallback for reveal triggers */
+        .reveal-trigger.revealed .reveal-item,
+        .reveal-trigger.revealed .reveal-word {
+          opacity: 1 !important;
+          transform: translateY(0) !important;
+        }
       `}</style>
     </div>
   );
