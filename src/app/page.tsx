@@ -106,12 +106,12 @@ export default function Home() {
       {/* ── Custom cursor ── */}
       <div
         ref={cursorRef}
-        className="fixed top-0 left-0 z-[9999] pointer-events-none"
+        className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference"
         style={{ willChange: "transform" }}
       >
         <div
-          className={`rounded-full border border-black/30 transition-all duration-200 ${
-            hovered ? "w-16 h-16 -translate-x-8 -translate-y-8 bg-black/5" : "w-5 h-5 -translate-x-2.5 -translate-y-2.5"
+          className={`rounded-full border border-white/60 transition-all duration-200 ${
+            hovered ? "w-16 h-16 -translate-x-8 -translate-y-8 bg-white/20" : "w-5 h-5 -translate-x-2.5 -translate-y-2.5"
           }`}
         />
       </div>
